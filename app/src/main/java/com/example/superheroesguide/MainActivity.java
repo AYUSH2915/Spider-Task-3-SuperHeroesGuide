@@ -55,18 +55,41 @@ public class MainActivity extends AppCompatActivity {
 
 
                     for(int i = 0 ; i<response.length() ; i++){
-                        String t="",r="",r1="",r2="",r3="";
-                        int k=0,f=0,k1=0,f1=0,k2=0,f2=0,k3=0,f3=0,k4=0,f4=0;
+
 
                         JSONObject jsonObject = response.getJSONObject(i);
                         String image = jsonObject.getString("slug");
-
+                        JSONObject powerstats= jsonObject.getJSONObject("powerstats");
+                        JSONObject appearance= jsonObject.getJSONObject("appearance");
+                        JSONObject biography= jsonObject.getJSONObject("biography");
+                        JSONObject work= jsonObject.getJSONObject("work");
+                        JSONArray height1=appearance.getJSONArray("height");
+                        JSONArray weight1=appearance.getJSONArray("weight");
+                        int intelligence,strength,speed,durability,power,combat;
+                        String gender,race,height,weight,eyecolor,haircolor,fullname,first_appearance,publisher,birth_place,occupation;
+                        intelligence=powerstats.getInt("intelligence");
+                        strength=powerstats.getInt("strength");
+                        speed=powerstats.getInt("speed");
+                        durability=powerstats.getInt("durability");
+                        power=powerstats.getInt("power");
+                        combat=powerstats.getInt("combat");
+                        gender=appearance.getString("gender");
+                        race=appearance.getString("race");
+                        height=height1.getString(0);
+                        weight=weight1.getString(1);
+                        eyecolor=appearance.getString("eyeColor");
+                        haircolor=appearance.getString("hairColor");
+                        fullname=biography.getString("fullName");
+                        first_appearance=biography.getString("firstAppearance");
+                        publisher=biography.getString("publisher");
+                        birth_place=biography.getString("placeOfBirth");
+                        occupation=work.getString("occupation");
                         String imageUrl="https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/"+image+".jpg";
                         String name = jsonObject.getString("name");
 
 
 
-                        items post = new items(imageUrl,name);
+                        items post = new items(imageUrl,name,intelligence,strength,speed,durability,power,combat,gender,race,height,weight,eyecolor,haircolor,fullname,first_appearance,publisher,birth_place,occupation);
                         mList.add(post);
 
                     }

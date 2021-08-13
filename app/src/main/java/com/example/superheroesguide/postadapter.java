@@ -41,13 +41,23 @@ public class postadapter extends RecyclerView.Adapter<postadapter.PostHolder> {
         holder.setname(items.getId());
         String url= items.getImageurl();
         String name=items.getId();
-
-
-
-
-
-
-
+        int intelligence= items.getIntelligence();
+        int strength=items.getStrength();
+        int power=items.getPower();
+        int speed= items.getSpeed();
+        int durability=items.getDurability();
+        int combat= items.getCombat();
+        String gender=items.getGender();
+        String race= items.getRace();
+        String height=items.getHeight();
+        String weight= items.getWeight();
+        String eyecolor=items.getEyecolor();
+        String haircolor= items.getHaircolor();
+        String fullname=items.getFullname();
+        String firstappearance= items.getFirst_appearance();
+        String publisher=items.getPublisher();
+        String birthplace= items.getBirth_place();
+        String occupation=items.getOccupation();
 
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,18 +65,23 @@ public class postadapter extends RecyclerView.Adapter<postadapter.PostHolder> {
                 Intent intent=new Intent(context,MainActivity2.class);
                 intent.putExtra("url",url);
                 intent.putExtra("name",name);
-
-
-
-
-
-
-
-
-
-
-
-
+                intent.putExtra("intelligence",intelligence);
+                intent.putExtra("strength",strength);
+                intent.putExtra("speed",speed);
+                intent.putExtra("power",power);
+                intent.putExtra("durability",durability);
+                intent.putExtra("combat",combat);
+                intent.putExtra("gender",gender);
+                intent.putExtra("race",race);
+                intent.putExtra("height",height);
+                intent.putExtra("weight",weight);
+                intent.putExtra("eyecolor",eyecolor);
+                intent.putExtra("haircolor",haircolor);
+                intent.putExtra("fullname",fullname);
+                intent.putExtra("firstappearance",firstappearance);
+                intent.putExtra("publisher",publisher);
+                intent.putExtra("birthplace",birthplace);
+                intent.putExtra("occupation",occupation);
                 context.startActivity(intent);
             }
         });
