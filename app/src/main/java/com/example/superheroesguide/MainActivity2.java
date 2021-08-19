@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide;
 
 public class MainActivity2 extends AppCompatActivity {
     ImageView imageView1;
-    TextView textView,textView2;
+    TextView textView,textView2,textView4,textView5,textView6,textView7,textView8,textView9;
     String url,name;
     int intelligence,strength,speed,durability,power,combat;
     String gender,race,height,weight,eyecolor,haircolor,fullname,first_appearance,publisher,birth_place,occupation;
@@ -28,6 +28,13 @@ public class MainActivity2 extends AppCompatActivity {
         imageView1=findViewById(R.id.imageView);
         textView=findViewById(R.id.textView);
         textView2=findViewById(R.id.textView2);
+        textView4=findViewById(R.id.textView4);
+        textView5=findViewById(R.id.textView5);
+        textView6=findViewById(R.id.textView6);
+        textView7=findViewById(R.id.textView7);
+        textView8=findViewById(R.id.textView8);
+        textView9=findViewById(R.id.textView9);
+
         getData();
         setData();
 
@@ -68,7 +75,14 @@ public class MainActivity2 extends AppCompatActivity {
     }
     private void setData(){
         textView.setText(name);
-        textView2.setText("📌Intelligence: "+intelligence+"   📌Strength: "+strength+"   📌Speed: "+speed+"   📌Durability: "+durability+"   📌Power: "+power+"   📌Combat: "+combat+"   📌Gender: "+gender+"   📌Race: "+race+"   📌Height(feet): "+height+"   📌Weight(kgs): "+weight+"   📌Eyecolor: "+eyecolor+"   📌Haircolor: "+haircolor+"   📌Fullname: "+fullname+"    📌First_Appearance: "+first_appearance+"   📌Publisher: "+publisher+"   📌Birth_Place: "+birth_place+"   📌Occupation: "+occupation);
+        textView4.setText("⭕️Power: "+power);
+        textView5.setText("⭕️Intelligence: "+intelligence);
+        textView6.setText("⭕️Strength: "+strength);
+        textView7.setText("⭕️Combat: "+combat);
+        textView8.setText("⭕️Speed:"+speed);
+        textView9.setText("⭕️Durability: "+durability);
+
+        textView2.setText("📌Gender: "+gender+"   📌Race: "+race+"   📌Height(feet): "+height+"   📌Weight(kgs): "+weight+"   📌Eyecolor: "+eyecolor+"   📌Haircolor: "+haircolor+"   📌Fullname: "+fullname+"    📌First_Appearance: "+first_appearance+"   📌Publisher: "+publisher+"   📌Birth_Place: "+birth_place+"   📌Occupation: "+occupation);
         Glide.with(context1).load(url).into(imageView1);
 
     }
